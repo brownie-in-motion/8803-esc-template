@@ -5,10 +5,12 @@ async function main() {
     // const Target = await hre.ethers.getContractFactory('RawTransaction')
     // const target = await Target.attach(address)
 
+    console.log('deploying...')
     const Solve = await hre.ethers.getContractFactory('RawTransactionSolve')
     const solve = await Solve.deploy()
     await solve.deployed()
 
+    console.log('running...')
     await solve.run(address)
 }
 
